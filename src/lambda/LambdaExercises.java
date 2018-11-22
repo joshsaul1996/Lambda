@@ -30,10 +30,25 @@ public class LambdaExercises {
 //					return true;
 //				}
 //			}
-			
-				List<String> joinStrings = Arrays.asList("Isn't", "the", "join", "method", "wonderful");
-				Optional<String> phrase = joinStrings.stream().reduce((str1, str2) -> str1 + " " + str2);
-				phrase.ifPresent(System.out::print);
+//			
+//				List<String> joinStrings = Arrays.asList("Isn't", "the", "join", "method", "wonderful");
+//				Optional<String> phrase = joinStrings.stream().reduce((str1, str2) -> str1 + " " + str2);
+//				phrase.ifPresent(System.out::print);
+		
+		List<Integer> evenNumbers = Arrays.asList(2,32,45,1,7,23,55,78,99);
+		Optional<Integer> evenOutcome = evenNumbers.stream().filter(even -> evenFinder(even).collect(Collectors.toList()));
+		evenOutcome.ifPresent(System.out::print);
+		
+		
+	}
+				
+		public static boolean evenFinder(Integer y) {
+			if (y % 2 ==0) {
+				return true;}
+		else {
+				return false;}
+		}
+		
 	}
 
-}
+
